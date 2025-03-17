@@ -28,7 +28,11 @@ function draw() {
   background(0);
   for (let i = 0; i < columns; i++) {
     for (let j = 0; j < rows; j++) {
-      fill(block[i][j] == 1 ? color(255) : color(0));
+      if (block[i][j] == 1) {
+        fill(255);
+      } else {
+        fill(0);
+      }
       noStroke();
       rect(i * cell_size, j * cell_size, cell_size, cell_size);
     }
@@ -40,16 +44,15 @@ function draw() {
     iterate();
     count++;
   }
-  //if (mode == 1) {
-    if (mouseIsPressed && mouseY < height - 100) {
-      let i = floor(mouseX / cell_size);
-      let j = floor(mouseY / cell_size);
-      if (i >= 0 && i < columns && j >= 0 && j < rows) {
-        block[i][j] = 1;
-      }
+
+  if (mouseIsPressed && mouseY < height - 100) {
+    let i = floor(mouseX / cell_size);
+    let j = floor(mouseY / cell_size);
+    if (i >= 0 && i < columns && j >= 0 && j < rows) {
+      block[i][j] = 1;
     }
   }
-//}
+}
 
 function UI() {
   fill(50);
@@ -61,8 +64,8 @@ function UI() {
 
   fill(255);
   textAlign(RIGHT, CENTER);
-  text(`Cells: ${counter()}`, width - 20, height - 75);
-  text(`Iterations: ${count}`, width - 20, height - 50);
+  text("Cells: " + counter(), width - 20, height - 75);
+  text("Iterations: " + count, width - 20, height - 50);
 }
 
 function draw_button(x, label, pressed) {
@@ -95,9 +98,17 @@ function iterate() {
         }
       }
       if (block[i][j] == 1) {
-        iteration_block[i][j] = sum <= 1 || sum >= 4 ? 0 : 1;
+        if (sum <= 1 || sum >= 4) {
+          iteration_block[i][j] = 0;
+        } else {
+          iteration_block[i][j] = 1;
+        }
       } else {
-        iteration_block[i][j] = sum == 3 ? 1 : 0;
+        if (sum == 3) {
+          iteration_block[i][j] = 1;
+        } else {
+          iteration_block[i][j] = 0;
+        }
       }
     }
   }
