@@ -1,0 +1,114 @@
+<!-- 
+Template for IMA's Creative Coding Lab 
+
+Project A: Generative Creatures
+CCLaboratories Biodiversity Atlas 
+-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Conway's Game of Life </title>
+
+    <!-- allow special characters, including Arabic, Chinese, Korean, Japanese, etc. -->
+    <meta charset="UTF-8">
+    <!-- link the style sheet -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <!-- import p5.js library -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.3/lib/p5.min.js"></script>
+    <script>
+        // prevent scrolling when spacebar and arrow keys are pressed.
+        window.addEventListener("keydown", function (e) { if ([32, 37, 38, 39, 40].indexOf(e.keyCode) > -1) { e.preventDefault(); } }, false);
+    </script>
+</head>
+
+<body>
+    <!-- title -->
+    <div id="title-wrapper">
+        <h1 class="headline white">Conway's Game of Life</h1>
+    </div>
+
+    <!-- main content -->
+    <div id="main-wrapper">
+        <div id="p5-canvas">
+            <!-- This is where your p5 sketch will be appended and appear! -->
+        </div>
+        <div class="two-columns">
+            <div class="left">
+                <h3 class="red">Scientific Name:</h3>
+                <p>Cells in Conway's Game of Life</p>
+
+                <h3 class="red">Discovered by / at:</h3>
+                <p>John Horton Conway, in 1970</p>
+
+                <h3 class="green">Family:</h3>
+                <p>Cellular Automaton (perhaps).</p>
+            </div>
+            <div class="right">
+                <h3 class="green">Habitat:</h3>
+                <p>Mostly in two-dimensional rectangular gridded coordinate systems.</p>
+
+                <h3 class="green">Appearance:</h3>
+                <p>Simple square with two different colors. Typically, black indicates dead and white indicates white.</p>
+
+                <h3 class="green">Key Characteristics:</h3>
+                <ul>
+                    <li>Macroscopic visualization of communities is randomized.</li>
+                    <li>It changes based on the states of neighboring cells.</li>
+                    <li>A group of cells can form stable, oscillating, or moving patterns.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="one-column">
+            <p>
+                <span class="yellow">What we know so far about Cells in Conway's Game of Life?</span>
+                Though the rules of the iteration are simple: a live cell survives with 2-3 neighbors, 
+                while a dead cell becomes alive with exactly 3 neighbors. Cells die from loneliness 
+                (fewer than 2 neighbors) or overpopulation (more than 3 neighbors). 
+                Those adorabal cells can generate complex patterns. 
+                <br>
+                <span class="yellow">Guidelines for human interaction with this creature</span> In general, 
+                initially these cells are not interactive. However, I have made these cells totally interactive! 
+                Mode 1 will automatically generate a randomized initial situation where observers can add live cells to 
+                influence evolution by controlling 
+                a mysterious device with the mouse. Mode 2 allows observers to set an initial “seed” 
+                and observe its evolution.
+
+                If you are interested in it and want to explore more, you can refer to 
+            <a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life#Examples_of_patterns" target="_blank">
+                https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life#Examples_of_patterns
+            </a> 
+            for more interesting patterns.<br>
+            Conway's Game of Life: 
+            <a href="https://playgameoflife.com/" target="_blank">
+                https://playgameoflife.com/
+            </p>
+        </div>
+    </div>
+
+
+
+    <!-- Footer -->
+    <div id="footer" class="black">
+        <p>A CCLab project made by Boyun Zeng in Spring 2025</p>
+    </div>
+
+    <!-- Home: Link back to the ATLAS page-->
+    <div id="home">
+        <a href="https://cclab.work/atlas">Back to the ATLAS</a>
+    </div>
+
+    <!-- Include your sketch.js file here -->
+    <script src="sketch.js" type="text/javascript"> </script>
+</body>
+
+</html>
