@@ -94,7 +94,10 @@ function iterate() {
           if (dx == 0 && dy == 0) continue;
           let nx = (i + dx + columns) % columns;
           let ny = (j + dy + rows) % rows;
+          
+          //if (nx >= 0 && nx < columns && ny >= 0 && ny < rows) {
           sum += block[nx][ny];
+          //}
         }
       }
       if (block[i][j] == 1) {
