@@ -1,0 +1,49 @@
+______________________________________________________________________________________
+
+v2.1
+
+Adjust the interactions mode, which will not allow the iteration to begin until "play" is pressed
+
+______________________________________________________________________________________
+
+v2.0
+
+Add the second mode which allows the observer to manually set the "seed" up
+Add "buttons", "play", "Cells" and "Iterations"
+Publish it on GitHub
+
+______________________________________________________________________________________
+
+v1.4
+
+Fix some bugs
+
+______________________________________________________________________________________
+
+v1.3
+
+Declare more variables to increase the robustness
+
+______________________________________________________________________________________
+
+v1.2
+
+Add interaction by pressing the keyboard to reset the iteration
+
+______________________________________________________________________________________
+
+v1.1
+
+Add interaction by clicking the mouse to add live cells to influence the iteration
+
+______________________________________________________________________________________
+
+v1.0
+
+Original Conway's Game of Life
+
+______________________________________________________________________________________
+
+
+Conway's Game of Life
+Boyun Zeng
