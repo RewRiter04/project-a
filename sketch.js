@@ -31,7 +31,8 @@ function draw() {
       if (block[i][j] == 1) {
         fill(255);
       } else {
-        fill(0);
+        // change from 0 to 36 to make it more visible
+        fill(36);
       }
       noStroke();
       rect(i * cell_size, j * cell_size, cell_size, cell_size);
