@@ -58,8 +58,8 @@ function UI() {
   fill(50);
   rect(0, height - 100, width, 100);
 
-  draw_button(100, "Mod 1", mode == 1);
-  draw_button(200, "Mod 2", mode == 2);
+  draw_button(20, "Ancient References", mode == 1);
+  draw_button(180, "Your Laboratory", mode == 2);
   draw_button(340, "▶", game_begin);
 
   fill(255);
@@ -71,17 +71,23 @@ function UI() {
 function draw_button(x, label, pressed) {
   if (pressed) {
     fill(180);
-    rect(x, height - 78, 80, 38, 5);
+    rect(x, height - 78, 135, 38, 5);
     fill(50);
     textStyle(BOLD);
+    
+    textAlign(CENTER, CENTER);
+    text(label, x + 135 / 2, height - 78 + 38 / 2);
   } else {
     fill(120);
-    rect(x, height - 85, 80, 45, 5); // if the button is unpressed, it seems higher
+    rect(x, height - 85, 135, 45, 5);
     fill(255);
     textStyle(NORMAL);
+    
+    textAlign(CENTER, CENTER);
+    text(label, x + 135 / 2, height - 85 + 45 / 2);
   }
-  text(label, x + 40, height - 60);
 }
+
 
 function iterate() {
   let iteration_block = [];
@@ -120,12 +126,12 @@ function iterate() {
 
 function mousePressed() {
   if (mouseY >= height - 100) {
-    if (mouseX >= 100 && mouseX <= 180) {
+    if (mouseX >= 20 && mouseX <= 155) {
       mode = 1;
       game_begin = false;
       reset();
       count = 0;
-    } else if (mouseX >= 200 && mouseX <= 280) {
+    } else if (mouseX >= 180 && mouseX <= 315) {
       mode = 2;
       game_begin = false;
       clearBlocks();
